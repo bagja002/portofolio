@@ -30,7 +30,7 @@ const ideTools = [
 
 export default function TechStack() {
     return (
-        <section className="py-20 bg-slate-950 relative overflow-hidden">
+        <section className="py-16 md:py-20 bg-slate-950 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-900/10 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-emerald-900/10 rounded-full blur-[120px] pointer-events-none"></div>

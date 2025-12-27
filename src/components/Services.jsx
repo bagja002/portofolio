@@ -27,7 +27,7 @@ const services = [
 
 export default function Services() {
     return (
-        <section id="skills" className="py-20 bg-slate-950 relative overflow-hidden">
+        <section id="skills" className="py-16 md:py-20 bg-slate-950 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 

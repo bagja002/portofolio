@@ -37,7 +37,7 @@ export default function Hero() {
                         className="mb-10 relative inline-block group"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-amber-500 rounded-[2rem] blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                        <div className="w-48 h-48 md:w-64 md:h-64 rounded-[2rem] p-1.5 bg-gradient-to-br from-emerald-500 to-amber-500 relative z-10 transform transition-transform duration-500 group-hover:scale-[1.02]">
+                        <div className="w-40 h-40 md:w-64 md:h-64 rounded-[2rem] p-1.5 bg-gradient-to-br from-emerald-500 to-amber-500 relative z-10 transform transition-transform duration-500 group-hover:scale-[1.02]">
                             <img
                                 src="./foto-profiile.jpeg"
                                 alt="Bagja Lazwardi"
@@ -65,7 +65,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 font-['Outfit'] tracking-tight leading-tight"
+                        className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 font-['Outfit'] tracking-tight leading-tight"
                     >
                         Hi, I'm{' '}
                         <span className="inline-block bg-gradient-to-r from-emerald-400 via-cyan-400 to-amber-500 bg-clip-text text-transparent">
@@ -78,7 +78,7 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
-                        className="text-xl sm:text-2xl lg:text-3xl text-slate-400 mb-6 max-w-3xl mx-auto leading-relaxed"
+                        className="text-lg sm:text-2xl lg:text-3xl text-slate-400 mb-6 max-w-3xl mx-auto leading-relaxed"
                     >
                         <span className="text-white font-semibold">Fullstack Developer</span>
                         {' '}&{' '}
@@ -99,7 +99,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7, duration: 0.6 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 sm:mb-16"
                     >
                         <a
                             href="#projects"
@@ -123,25 +123,25 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.9, duration: 0.8 }}
-                        className="flex flex-wrap items-center justify-center gap-8 text-slate-500"
+                        className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-slate-500"
                     >
                         <div className="flex items-center gap-2 group cursor-default">
                             <div className="p-2 rounded-lg bg-slate-900/50 border border-slate-800 group-hover:border-emerald-500/50 transition-colors">
-                                <Code className="w-5 h-5 text-emerald-400" />
+                                <Code className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
                             </div>
-                            <span className="text-sm font-medium">Fullstack Dev</span>
+                            <span className="text-xs sm:text-sm font-medium">Fullstack Dev</span>
                         </div>
                         <div className="flex items-center gap-2 group cursor-default">
                             <div className="p-2 rounded-lg bg-slate-900/50 border border-slate-800 group-hover:border-amber-500/50 transition-colors">
-                                <Database className="w-5 h-5 text-amber-400" />
+                                <Database className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
                             </div>
-                            <span className="text-sm font-medium">Data Analysis</span>
+                            <span className="text-xs sm:text-sm font-medium">Data Analysis</span>
                         </div>
                         <div className="flex items-center gap-2 group cursor-default">
                             <div className="p-2 rounded-lg bg-slate-900/50 border border-slate-800 group-hover:border-cyan-500/50 transition-colors">
-                                <Brain className="w-5 h-5 text-cyan-400" />
+                                <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                             </div>
-                            <span className="text-sm font-medium">AI Engineering</span>
+                            <span className="text-xs sm:text-sm font-medium">AI Engineering</span>
                         </div>
                     </motion.div>
                 </motion.div>

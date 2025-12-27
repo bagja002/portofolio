@@ -10,7 +10,7 @@ export default function About() {
     ];
 
     return (
-        <section id="about" className="py-24 bg-slate-900 overflow-hidden">
+        <section id="about" className="py-16 md:py-24 bg-slate-900 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
@@ -19,10 +19,10 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="mb-16"
+                    className="mb-12 md:mb-16"
                 >
                     <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">About Me</span>
-                    <h2 className="text-4xl md:text-5xl font-bold font-['Outfit'] text-white mt-2">
+                    <h2 className="text-3xl md:text-5xl font-bold font-['Outfit'] text-white mt-2">
                         From Self-Taught to{' '}
                         <span className="bg-gradient-to-r from-emerald-400 to-amber-500 bg-clip-text text-transparent">
                             Government Systems
@@ -30,7 +30,7 @@ export default function About() {
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
                     {/* Left Column - Text Content */}
                     <motion.div
@@ -40,20 +40,20 @@ export default function About() {
                         viewport={{ once: true }}
                         className="space-y-6"
                     >
-                        <p className="text-lg text-slate-300 leading-relaxed text-justify">
+                        <p className="text-base md:text-lg text-slate-300 leading-relaxed text-left md:text-justify">
                             Born in 2001, my journey into software development began in <span className="font-semibold text-white">2020</span> as a
                             self-taught developer during the pandemic. What started as curiosity quickly evolved into a passion for
                             building systems that solve real-world problems.
                         </p>
 
-                        <p className="text-base text-slate-400 leading-relaxed text-justify">
+                        <p className="text-sm md:text-base text-slate-400 leading-relaxed text-left md:text-justify">
                             In <span className="text-slate-200">2023</span>, while still in university, I landed an internship as a
                             <span className="font-semibold text-white"> Software Engineer</span> at one of Indonesia's largest toll road companies.
                             There, I dove deep into <span className="text-slate-200">system integration and backend development</span>,
                             building a comprehensive procurement monitoring website to streamline and track procurement processes across the organization.
                         </p>
 
-                        <p className="text-base text-slate-400 leading-relaxed text-justify">
+                        <p className="text-sm md:text-base text-slate-400 leading-relaxed text-left md:text-justify">
                             The experience proved invaluable—before even graduating in <span className="text-slate-200">2024</span>, I was already
                             working as an <span className="font-semibold text-white">Information System Logic Analyst</span> at the
                             <span className="font-semibold text-slate-200"> Ministry of Marine Affairs and Fisheries of Indonesia</span>. Here, I developed key systems including
@@ -62,7 +62,7 @@ export default function About() {
                             training centers and utilized my expertise to optimize the <span className="text-slate-200">Fishery Crew Certificate Issuance System</span>.
                         </p>
 
-                        <p className="text-base text-slate-400 leading-relaxed text-justify">
+                        <p className="text-sm md:text-base text-slate-400 leading-relaxed text-left md:text-justify">
                             Today, I specialize in <span className="text-slate-200">fullstack and backend development</span> with a strong focus
                             on system integration, microservices architecture, and building scalable solutions that stand the test of time.
                             My self-taught background gives me a unique perspective—I don't just code, I understand the <span className="text-slate-200">"why"</span>

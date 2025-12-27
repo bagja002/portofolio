@@ -112,28 +112,28 @@ export default function Navbar() {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="md:hidden bg-slate-950/95 backdrop-blur-lg border-b border-slate-800"
+                        className="md:hidden bg-slate-950/95 backdrop-blur-lg border-b border-slate-800 absolute w-full"
                     >
-                        <div className="px-4 pt-2 pb-4 space-y-2">
+                        <div className="px-4 pt-2 pb-6 space-y-2">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
                                     onClick={(e) => handleClick(e, link.href)}
-                                    className="text-slate-300 hover:text-white hover:bg-slate-800 block px-4 py-3 rounded-lg text-base font-medium cursor-pointer transition-all"
+                                    className="text-slate-300 hover:text-white hover:bg-slate-800 block px-4 py-4 rounded-xl text-lg font-medium cursor-pointer transition-all active:bg-slate-800/80"
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <div className="flex items-center gap-3 px-4 py-2 pt-4 border-t border-slate-800 mt-2">
-                                <a href="#" className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
-                                    <Github size={20} />
+                            <div className="flex items-center gap-4 px-4 py-4 pt-6 border-t border-slate-800/50 mt-4">
+                                <a href="https://github.com/bagja002" target="_blank" className="p-3 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-all active:scale-95">
+                                    <Github size={22} />
                                 </a>
-                                <a href="#" className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
-                                    <Linkedin size={20} />
+                                <a href="https://www.linkedin.com/in/bagja-lazwardi-221935174/" target="_blank" className="p-3 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-all active:scale-95">
+                                    <Linkedin size={22} />
                                 </a>
-                                <a href="#" className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
-                                    <Mail size={20} />
+                                <a href="mailto:barjafaskan9@gmail.com" target="_blank" className="p-3 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-all active:scale-95">
+                                    <Mail size={22} />
                                 </a>
                             </div>
                         </div>
