@@ -7,7 +7,7 @@ const projects = [
         id: 1,
         title: 'E-LAUT Platform',
         category: 'Fullstack Web Application',
-        image: '/elaut.png',
+        image: './elaut.png',
         description: 'A digital platform by BPPSDM KP – Ministry of Marine Affairs and Fisheries of Indonesia for managing training, certification, and competency development in the marine and fisheries sector.',
         tech: ['Next.Js', 'Tailwind', 'REST API', 'Go', 'Go Fiber', 'Docker', 'MySQL'],
         links: { demo: 'https://elaut-bppsdm.kkp.go.id/' }
@@ -17,7 +17,7 @@ const projects = [
         id: 2,
         title: 'E-LATAR Academic Platform',
         category: 'Fullstack Web Application',
-        image: '/elatar.png',
+        image: './elatar.png',
         description: 'A digital academic platform developed by BPPSDM KP – Ministry of Marine Affairs and Fisheries of Indonesia to support education management and digital learning transformation in the marine and fisheries sector.',
         tech: ['Next.Js', 'Tailwind', 'REST API', 'Go', 'Go Fiber', 'Docker', 'MySQL'],
         links: { demo: 'https://elatar-bppsdm.kkp.go.id/' }
@@ -27,7 +27,7 @@ const projects = [
         id: 3,
         title: 'E-PROC Sarpras Dashboard',
         category: 'Fullstack Web Application',
-        image: '/e-proc.png',
+        image: './e-proc.png',
         description: 'A monitoring dashboard for procurement, budgeting, and realization of educational infrastructure modernization at BPPSDM KP, providing real-time insights into contracts, progress, and financial performance.',
         tech: ['Next.js', 'Golang', 'Fiber', 'MySQL', 'REST API', 'Chart.js'],
         links: { demo: 'http://eproc-bppsdm.ikulatluh.cloud/' }
@@ -37,7 +37,7 @@ const projects = [
         id: 4,
         title: 'SIKAP – Sistem Informasi Ujian AKP',
         category: 'Fullstack Web Application',
-        image: '/sikap.png',
+        image: './sikap.png',
         description: 'A web-based examination management system for Fishing Vessel Crew (Awak Kapal Perikanan), enabling scheduling, participant management, exam execution, monitoring, and evaluation of competency tests in accordance with official certification standards.',
         tech: ['Next.js', 'Golang', 'Fiber', 'MySQL', 'REST API'],
         links: { demo: 'https://sikap-dpkakp-dev.vercel.app/' }
@@ -47,7 +47,7 @@ const projects = [
         id: 5,
         title: 'SICEPATKU – IKU Management System',
         category: 'Fullstack Web Application',
-        image: '/siceppatku.png',
+        image: './siceppatku.png',
         description: 'A performance indicator management system designed to monitor, evaluate, and report Key Performance Indicators (IKU) related to training and extension programs, enabling data-driven decision-making and integrated performance tracking.',
         tech: ['Next.js', 'Golang', 'Fiber', 'MySQL', 'REST API', 'Dashboard Analytics'],
         links: { demo: 'https://siceppatku.ikulatluh.cloud/' }
@@ -57,7 +57,7 @@ const projects = [
         id: 6,
         title: 'EDA Climate Data BMKG Jakarta 1995–2022',
         category: 'Machine Learning / Data Science',
-        image: '/EDA_Curah_Hujan.png',
+        image: './EDA_Curah_Hujan.png',
         description: 'Exploratory data analysis and rainfall prediction modeling using climate data from BMKG Jakarta (1995–2022), involving data cleaning, visualization, and linear regression forecasting.',
         tech: ['Python', 'Pandas', 'Matplotlib', 'Scikit-Learn', 'Data Analysis'],
         links: { demo: 'https://bisa.ai/portofolio/detail/Njk4' }
@@ -66,7 +66,7 @@ const projects = [
         id: 7,
         title: 'Starbucks Tea Classification',
         category: 'Machine Learning / Data Science',
-        image: '/klasifikation-tea.png',
+        image: './klasifikation-tea.png',
         description: 'A machine learning classification project using Artificial Neural Network (ANN) to categorize Starbucks menu items based on tea content. The project involves data preprocessing, feature analysis, model training, and evaluation to distinguish tea-based and non-tea products.',
         tech: ['Python', 'Artificial Neural Network', 'Machine Learning', 'Data Mining'],
         links: { demo: 'https://bisa.ai/portofolio/detail/NTYw' }

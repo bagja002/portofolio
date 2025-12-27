@@ -39,7 +39,7 @@ export default function Hero() {
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-amber-500 rounded-[2rem] blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                         <div className="w-48 h-48 md:w-64 md:h-64 rounded-[2rem] p-1.5 bg-gradient-to-br from-emerald-500 to-amber-500 relative z-10 transform transition-transform duration-500 group-hover:scale-[1.02]">
                             <img
-                                src="/foto-profiile.jpeg"
+                                src="./foto-profiile.jpeg"
                                 alt="Bagja Lazwardi"
                                 className="w-full h-full object-cover rounded-[1.7rem] border-4 border-slate-950"
                             />
