@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  @apply antialiased overflow-x-hidden bg-slate-950 text-white;
+}
