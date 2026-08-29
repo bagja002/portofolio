@@ -1,145 +1,111 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const navLinks = [
+    { name: 'about', href: '#about' },
+    { name: 'capabilities', href: '#skills' },
+    { name: 'stack', href: '#stack' },
+    { name: 'register', href: '#projects' },
+    { name: 'contact', href: '#contact' },
+];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const [hidden, setHidden] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
+        let lastY = window.scrollY;
+
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-
-            // Set scrolled state for background
-            setScrolled(currentScrollY > 50);
-
-            // Auto-hide on scroll down, show on scroll up
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                setHidden(true);
-            } else {
-                setHidden(false);
-            }
-
-            setLastScrollY(currentScrollY);
+            const y = window.scrollY;
+            setHidden(y > lastY && y > 120);
+            lastY = y;
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
+    }, []);
 
-    const navLinks = [
-        { name: 'About', href: '#about' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Contact', href: '#contact' },
-    ];
-
-    const handleClick = (e, href) => {
+    const scrollTo = (e, href) => {
         e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
-            setIsOpen(false);
-        }
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setIsOpen(false);
     };
 
     return (
-        <motion.nav
+        <motion.header
             initial={{ y: 0 }}
-            animate={{ y: hidden ? -100 : 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-                ? 'bg-slate-950/90 backdrop-blur-lg border-b border-slate-800/50 shadow-lg'
-                : 'bg-transparent'
-                }`}
+            animate={{ y: hidden && !isOpen ? -80 : 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="fixed inset-x-0 top-0 z-50 border-b border-rule bg-void/95 backdrop-blur-sm"
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    <div className="flex-shrink-0">
+            {/* A status line, the way tmux or vim carries one. */}
+            <div className="term flex h-11 items-center justify-between gap-4 text-[0.8125rem]">
+                <a
+                    href="#top"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="flex shrink-0 items-baseline gap-1.5 whitespace-nowrap"
+                >
+                    <span className="font-semibold text-amber">~</span>
+                    <span className="text-bright">bagja.lazwardi</span>
+                    <span className="hidden text-dim sm:inline">/ system register</span>
+                </a>
 
-                    </div>
-
-                    {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center gap-8">
-                        <div className="flex items-baseline space-x-8">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={(e) => handleClick(e, link.href)}
-                                    className="text-slate-300 hover:text-white transition-colors duration-200 text-sm font-medium cursor-pointer relative group"
-                                >
-                                    {link.name}
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
-                            ))}
-                        </div>
-                        <div className="flex items-center space-x-3 pl-4 border-l border-slate-700">
-                            <a href="https://github.com/bagja002" target="_blank" className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-200">
-                                <Github size={18} />
-                            </a>
-                            <a href="https://www.linkedin.com/in/bagja-lazwardi-221935174/" target="_blank" className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-200">
-                                <Linkedin size={18} />
-                            </a>
-                            <a href="mailto:barjafaskan9@gmail.com" target="_blank" className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-200">
-                                <Mail size={18} />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Mobile menu button */}
-                    <div className="md:hidden">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg hover:bg-slate-800 transition-all"
+                <nav className="hidden items-center gap-5 md:flex">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            onClick={(e) => scrollTo(e, link.href)}
+                            className="text-dim transition-colors hover:text-amber"
                         >
-                            {isOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
-                </div>
+                            <span className="text-rule-lit">[</span>
+                            {link.name}
+                            <span className="text-rule-lit">]</span>
+                        </a>
+                    ))}
+                </nav>
+
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? 'Close menu' : 'Open menu'}
+                    aria-expanded={isOpen}
+                    className="text-body transition-colors hover:text-amber md:hidden"
+                >
+                    {isOpen ? <X size={19} strokeWidth={1.75} /> : <Menu size={19} strokeWidth={1.75} />}
+                </button>
             </div>
 
-            {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
+                    <motion.nav
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="md:hidden bg-slate-950/95 backdrop-blur-lg border-b border-slate-800 absolute w-full"
+                        transition={{ duration: 0.2, ease: 'easeInOut' }}
+                        className="overflow-hidden border-t border-rule bg-void md:hidden"
                     >
-                        <div className="px-4 pt-2 pb-6 space-y-2">
+                        <ul className="term py-3">
                             {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={(e) => handleClick(e, link.href)}
-                                    className="text-slate-300 hover:text-white hover:bg-slate-800 block px-4 py-4 rounded-xl text-lg font-medium cursor-pointer transition-all active:bg-slate-800/80"
-                                >
-                                    {link.name}
-                                </a>
+                                <li key={link.name}>
+                                    <a
+                                        href={link.href}
+                                        onClick={(e) => scrollTo(e, link.href)}
+                                        className="flex items-baseline gap-3 py-2.5 text-body transition-colors hover:text-amber"
+                                    >
+                                        <span className="text-amber">&gt;</span>
+                                        {link.name}
+                                    </a>
+                                </li>
                             ))}
-                            <div className="flex items-center gap-4 px-4 py-4 pt-6 border-t border-slate-800/50 mt-4">
-                                <a href="https://github.com/bagja002" target="_blank" className="p-3 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-all active:scale-95">
-                                    <Github size={22} />
-                                </a>
-                                <a href="https://www.linkedin.com/in/bagja-lazwardi-221935174/" target="_blank" className="p-3 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-all active:scale-95">
-                                    <Linkedin size={22} />
-                                </a>
-                                <a href="mailto:barjafaskan9@gmail.com" target="_blank" className="p-3 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-all active:scale-95">
-                                    <Mail size={22} />
-                                </a>
-                            </div>
-                        </div>
-                    </motion.div>
+                        </ul>
+                    </motion.nav>
                 )}
             </AnimatePresence>
-        </motion.nav>
+        </motion.header>
     );
 }

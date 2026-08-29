@@ -1,69 +1,60 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Database, Monitor, Brain, BarChart, Server, Layers } from 'lucide-react';
 
-const services = [
+const capabilities = [
     {
-        icon: <Monitor className="w-8 h-8 text-emerald-400" />,
+        name: 'fullstack',
         title: 'Fullstack Development',
-        description: 'Building end-to-end web applications using modern tech stacks like Next.js, Node.js, and Golang.',
+        detail: 'End-to-end applications on Next.js, Node.js, and Go — from schema through to deployed interface.',
     },
     {
-        icon: <Brain className="w-8 h-8 text-amber-400" />,
-        title: 'AI Integration',
-        description: 'Implementing Machine Learning models and LLMs to create intelligent, adaptive systems.',
-    },
-    {
-        icon: <BarChart className="w-8 h-8 text-cyan-400" />,
-        title: 'Data Analysis',
-        description: 'Extracting actionable insights from complex datasets to drive informed decision-making.',
-    },
-    {
-        icon: <Server className="w-8 h-8 text-orange-400" />,
+        name: 'backend',
         title: 'Backend Engineering',
-        description: 'Designing scalable microservices and robust API architectures for high-performance apps.',
+        detail: 'Service architecture and REST APIs sized for real traffic, with the operational detail handled.',
+    },
+    {
+        name: 'data',
+        title: 'Data Analysis',
+        detail: 'Turning operational datasets into the figures a decision actually rests on.',
+    },
+    {
+        name: 'ai',
+        title: 'AI Integration',
+        detail: 'Machine learning models and LLMs applied where they earn their place in a system.',
     },
 ];
 
 export default function Services() {
     return (
-        <section id="skills" className="py-16 md:py-20 bg-slate-950 relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-900/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
+        <section id="skills" className="border-t border-rule py-20 md:py-24">
+            <div className="term">
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.45 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    className="cmd"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold font-['Outfit'] text-white mb-4">
-                        My Expertise
-                    </h2>
-                    <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-                        A comprehensive toolset to tackle any technical challenge.
-                    </p>
-                </motion.div>
+                    ls ./capabilities
+                </motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {services.map((service, index) => (
+                <div className="mt-10 max-w-[80ch]">
+                    {capabilities.map((cap, i) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                            key={cap.name}
+                            initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:-translate-y-1 group"
+                            transition={{ duration: 0.4, delay: i * 0.06 }}
+                            viewport={{ once: true, margin: '-60px' }}
+                            className="group grid gap-x-6 gap-y-1.5 border-b border-rule py-6 sm:grid-cols-[9rem_1fr]"
                         >
-                            <div className="mb-4 p-3 rounded-xl bg-slate-800 w-fit group-hover:bg-slate-800/80 transition-colors">
-                                {service.icon}
+                            <span className="text-dim transition-colors group-hover:text-amber">
+                                {cap.name}/
+                            </span>
+                            <div>
+                                <h3 className="font-medium text-bright">{cap.title}</h3>
+                                <p className="mt-1.5 text-body">{cap.detail}</p>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3 font-['Outfit']">{service.title}</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">
-                                {service.description}
-                            </p>
                         </motion.div>
                     ))}
                 </div>

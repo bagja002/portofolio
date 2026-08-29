@@ -1,4 +1,5 @@
 import React from 'react';
+import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,16 +11,21 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="bg-slate-950 min-h-screen text-slate-200 font-sans selection:bg-emerald-500/30">
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <TechStack />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    // reducedMotion="user" hands the whole page over to the OS setting.
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen bg-ink-950">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <TechStack />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   );
 }
 
